@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
-import { Router, Scene } from 'react-native-router-flux';
+import { Actions, Router, Scene } from 'react-native-router-flux';
 import TitledInput from './TitledInput';
 import firebase from './firebase';
+import Booking from './Booking';
 
 export default class LoginForm extends Component {
     state = { email: '', password: '', error: '', loading: false };
@@ -11,14 +12,14 @@ export default class LoginForm extends Component {
 
         const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(() => { this.setState({ error: '', loading: false }); })
+            .then(() => { this.setState({ error: '', loading: false }); Actions.Booking() })
             .catch(() => {
                 //Login was not successful, let's create a new account
-                firebase.auth().createUserWithEmailAndPassword(email, password)
-                    .then(() => { this.setState({ error: '', loading: false }); })
-                    .catch(() => {
+                // firebase.auth().createUserWithEmailAndPassword(email, password)
+                //     .then(() => { this.setState({ error: '', loading: false }); })
+                //     .catch(() => {
                         this.setState({ error: 'Invalid Email or Password', loading: false });
-                    });
+                    // });
             });
     }
     renderButtonOrSpinner() {

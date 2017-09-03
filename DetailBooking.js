@@ -6,15 +6,15 @@ export default class DetailBooking extends React.Component {
     constructor(props){
         super(props)
     }
-    
+
     render() {
         return (
             <TouchableHighlight > 
             <View style={styles.container} >
                 <View style={styles.content}>
-                    <Text style={styles.title}>{this.props.Room}</Text>  
-                    <Text style={styles.detail}>{this.props.Date}</Text>   
-                    <Text style={styles.detail}>{this.props.Time}</Text>
+                    <Text style={styles.title}>Room No. {this.props.Room}</Text>  
+                    <Text style={styles.detail}>Date . {this.props.Date}</Text>   
+                    <Text style={styles.detail}>Time . {this.props.Time}</Text>
                 </View>
             </View>
             </TouchableHighlight>

@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View ,ListView} from 'react-native';
+import { StyleSheet, Text, View ,ListView , TouchableHighlight} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Router, Scene } from 'react-native-router-flux'; 
 import firebase from './firebase';
 import DetailBooking from './DetailBooking';
+import AddList from './AddList';
 
 export default class Booking extends Component {
     constructor() {
@@ -54,8 +55,7 @@ export default class Booking extends Component {
   
       return (
         <View>
-          <Text>{todo.Room}</Text>
-          
+          <Text>{todo.Room}</Text> 
         </View>
       );
     }
@@ -66,14 +66,14 @@ export default class Booking extends Component {
     // Render the list of ToDos with a Button
     render() {
       return (
-        <View>
+        <View style={styles.container}> 
           <ListView
             dataSource={this.state.todos}
             renderRow={this._renderRow}
           />
-          {/* <TouchableHighlight style={styles.button} onPress={Actions.tellStory} underlayColor='#99d9f4'>
+          <TouchableHighlight style={styles.button} onPress={Actions.AddList} underlayColor='#99d9f4'>
             <Text style={styles.buttonText} >Booking !!!</Text>
-          </TouchableHighlight> */}
+          </TouchableHighlight>
         </View>
         
       );

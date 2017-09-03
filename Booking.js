@@ -3,6 +3,7 @@ import { StyleSheet, Text, View ,ListView} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { Router, Scene } from 'react-native-router-flux'; 
 import firebase from './firebase';
+import DetailBooking from './DetailBooking';
 
 export default class Booking extends Component {
     constructor() {
@@ -42,7 +43,7 @@ export default class Booking extends Component {
       });
     }
   
-
+    
   
     // Render a ToDo row
     renderToDo(todo) {
@@ -58,6 +59,9 @@ export default class Booking extends Component {
         </View>
       );
     }
+    _renderRow = rowData=>{
+      return <DetailBooking {...rowData} />
+    }
   
     // Render the list of ToDos with a Button
     render() {
@@ -65,9 +69,37 @@ export default class Booking extends Component {
         <View>
           <ListView
             dataSource={this.state.todos}
-            renderRow={(...args) => this.renderToDo(...args)}
+            renderRow={this._renderRow}
           />
+          {/* <TouchableHighlight style={styles.button} onPress={Actions.tellStory} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText} >Booking !!!</Text>
+          </TouchableHighlight> */}
         </View>
+        
       );
     }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+    marginBottom : 5
+  },
+  button: {
+    height: 40,
+    backgroundColor: '#48BBEC',
+    borderColor: '#48BBEC',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 20,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: 'white',
+    alignSelf: 'center'
+  },
+});

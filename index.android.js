@@ -15,6 +15,7 @@ import LoginForm from './LoginForm';
 import Booking from './Booking';
 import { Router, Scene } from 'react-native-router-flux';
 import firebase from './firebase';
+import DetailBooking from './DetailBooking';
 
 export default class fb01 extends Component {
 
@@ -41,6 +42,7 @@ export default class fb01 extends Component {
         <Scene key="root">
           <Scene key="LoginForm" component={LoginForm} title="Login Account ;)" initial={true} />
           <Scene key="Booking" component={Booking} title="Your Booking" />
+          <Scene key="DetailBooking" component={DetailBooking} title="Detail" />
         </Scene>
       </Router>
     );

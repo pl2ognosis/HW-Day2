@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ListView, Image,TouchableHighlight } from 'reac
 import t from 'tcomb-form-native';
 import { Actions } from 'react-native-router-flux';
 import firebase from './firebase'
+import Booking from './Booking';
 
 var Form = t.form.Form;
 
@@ -50,6 +51,9 @@ export default class AddList extends React.Component {
         <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
           <Text style={styles.buttonText}>Add Booking</Text>
         </TouchableHighlight>
+        <TouchableHighlight style={styles.button} onPress={Actions.Booking} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText} >Back</Text>
+          </TouchableHighlight>
       </View>
         )
     }

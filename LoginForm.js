@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button ,} from 'react-native';
 import { Actions, Router, Scene } from 'react-native-router-flux';
 import TitledInput from './TitledInput';
 import firebase from './firebase';
 import Booking from './Booking';
+
 
 export default class LoginForm extends Component {
     state = { email: '', password: '', error: '', loading: false };

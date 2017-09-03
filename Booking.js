@@ -5,6 +5,8 @@ import { Router, Scene } from 'react-native-router-flux';
 import firebase from './firebase';
 import DetailBooking from './DetailBooking';
 import AddList from './AddList';
+import WebView from './WebView';
+import Vibration from './Vibration';
 
 export default class Booking extends Component {
     constructor() {
@@ -74,6 +76,14 @@ export default class Booking extends Component {
           <TouchableHighlight style={styles.button} onPress={Actions.AddList} underlayColor='#99d9f4'>
             <Text style={styles.buttonText} >Booking !!!</Text>
           </TouchableHighlight>
+
+          <TouchableHighlight style={styles.button} onPress={Actions.WebView} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText} > Booking Studyrooms @clib PSU</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight style={styles.button} onPress={Actions.Vibration} underlayColor='#99d9f4'>
+            <Text style={styles.buttonText} > PRESS ME </Text>
+          </TouchableHighlight>
         </View>
         
       );
@@ -82,7 +92,7 @@ export default class Booking extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'stretch',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
     marginBottom : 5

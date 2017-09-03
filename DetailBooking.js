@@ -11,7 +11,7 @@ export default class DetailBooking extends React.Component {
         return (
             <TouchableHighlight > 
             <View style={styles.container} >
-                <View style={styles.content}>
+                <View>
                     <Text style={styles.title}>Room No. {this.props.Room}</Text>  
                     <Text style={styles.detail}>Date . {this.props.Date}</Text>   
                     <Text style={styles.detail}>Time . {this.props.Time}</Text>
@@ -41,5 +41,11 @@ const styles = StyleSheet.create({
       color:"#555555",
       fontStyle:"italic",
       fontSize:20
+  },
+  content: {
+    borderWidth: 1,
+    borderRadius: 8,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
   }
 });

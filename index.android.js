@@ -17,7 +17,6 @@ import firebase from './firebase';
 import DetailBooking from './DetailBooking';
 import AddList from './AddList';
 import WebView from './WebView';
-import Vibration from './Vibration';
 
 export default class fb01 extends Component {
   render() {
@@ -29,7 +28,6 @@ export default class fb01 extends Component {
           <Scene key="DetailBooking" component={DetailBooking} title="Detail" />
           <Scene key="AddList" component={AddList} title="Add Booking" />
           <Scene key="WebView" component={WebView} title="PSU STUDY ROOMS" />
-          <Scene key="Vibration" component={Vibration} title="Vibration Test" />
         </Scene>
       </Router>
     );

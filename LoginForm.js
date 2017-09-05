@@ -7,7 +7,7 @@ import Booking from './Booking';
 
 
 export default class LoginForm extends Component {
-    state = { email: '', password: '', error: '', loading: false };
+    state = { email: '', password: '', error: '', loading: false ,fcm: ''};
     onLoginPress() {
         this.setState({ error: '', loading: true });
 
@@ -22,6 +22,11 @@ export default class LoginForm extends Component {
                         this.setState({ error: 'Invalid Email or Password', loading: false });
                     // });
             });
+        firebase.messaging().getToken()
+        .then((token) => {
+        console.log('Device FCM Token: ', token);
+        });
+        
     }
     renderButtonOrSpinner() {
         if (this.state.loading) {
@@ -29,6 +34,13 @@ export default class LoginForm extends Component {
         }
         return <Button onPress={this.onLoginPress.bind(this)} title="ENTER" />;
     }
+    getTokenFCM() {
+        firebase.messaging().getToken()
+            .then((token) => {
+            console.log('Device FCM Token: ', token);
+    });
+    }
+    
 
     render() {
         return (
@@ -49,6 +61,9 @@ export default class LoginForm extends Component {
                     />
                     <Text>{this.state.error}</Text> 
                     {this.renderButtonOrSpinner()}
+                    {}
+
+                    
             </View>
         );
     }

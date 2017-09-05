@@ -6,7 +6,7 @@ import firebase from './firebase';
 import DetailBooking from './DetailBooking';
 import AddList from './AddList';
 import WebView from './WebView';
-import Vibration from './Vibration';
+
 
 export default class Booking extends Component {
     constructor() {
@@ -81,9 +81,7 @@ export default class Booking extends Component {
             <Text style={styles.buttonText} > Booking Studyrooms @clib PSU</Text>
           </TouchableHighlight>
 
-          <TouchableHighlight style={styles.button} onPress={Actions.Vibration} underlayColor='#99d9f4'>
-            <Text style={styles.buttonText} > PRESS ME </Text>
-          </TouchableHighlight>
+
         </View>
         
       );
@@ -92,7 +90,7 @@ export default class Booking extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'stretch',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
     marginBottom : 5
